@@ -158,6 +158,10 @@ class EnvisalinkAlarm(EnvisalinkDevice, AlarmControlPanelEntity):
         return CodeFormat.NUMBER
 
     @property
+    def code_arm_required(self) -> bool
+        return False
+
+    @property
     def _info(self):
         return self._controller.controller.alarm_state["partition"][self._partition_number]
 
